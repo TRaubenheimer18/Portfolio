@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 const navLinks = [
   { label: "About", href: "/#about" },
   { label: "Projects", href: "/#work" },
-  { label: "Contact", href: "/#contact" }, 
+  // { label: "Contact", href: "/#contact" }, 
   { label: "Skills", href: "/#skills" },
 ];
 
@@ -51,12 +51,12 @@ export default function Navbar() {
               <span className="absolute -bottom-0.5 left-0 w-0 h-px bg-[#66001f] transition-all duration-300 group-hover:w-full" />
             </a>
           ))}
-          <a
-            href="/#contact"
+          <Link
+            to="/resume"
             className="ml-2 text-sm font-medium bg-[#66001f] text-[#fffcf6] px-5 py-2.5 hover:bg-[#66001f]/85 transition-colors duration-300"
           >
-            Let's Talk
-          </a>
+            View Resume
+          </Link>
         </nav>
 
         {/* Mobile hamburger */}
@@ -105,11 +105,11 @@ export default function Navbar() {
                 </motion.a>
               ))}
               <a
-                href="/#contact"
+                href="/#resume"
                 className="mt-1 text-center text-sm font-medium bg-[#66001f] text-[#fffcf6] px-5 py-3"
                 onClick={() => setOpen(false)}
               >
-                Let's Talk
+                View Resume
               </a>
             </div>
           </motion.div>
