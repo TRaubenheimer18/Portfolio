@@ -21,6 +21,12 @@ const categories = [
   },
   {
     number: "04",
+    label: "Back-End & Database",
+    description: "Building server-side logic and managing data with modern backend tools.",
+    items: ["Supabase", "PostgreSQL", "REST APIs", "Authentication", "Environment Variables"],
+  },
+  {
+    number: "05",
     label: "Other",
     description: "Supporting tools and workflows used across projects.",
     items: ["Git", "GitHub", "GitLab", "VS Code", "Prototyping"],
@@ -64,7 +70,7 @@ export default function Skills() {
         </div>
 
         {/* Cards */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-px bg-[#fffcf6]/10">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-[#fffcf6]/10">
           {categories.map((cat, i) => (
             <motion.div
               key={cat.label}
@@ -103,6 +109,10 @@ export default function Skills() {
               </div>
             </motion.div>
           ))}
+          {/* Filler to prevent blank gap cell */}
+          {categories.length % 3 !== 0 && (
+            <div className="hidden lg:block bg-[#1d2d44]" />
+          )}
         </div>
 
       </div>

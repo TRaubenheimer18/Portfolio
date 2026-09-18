@@ -10,6 +10,7 @@ const projects = [
     num: "01",
     title: "Branding & Events Studio",
     tags: ["UI/UX Design", "Front-End Development"],
+    status: "live",
     description:
       "A modern branding and events website featuring elegant layouts, service pages and a clean user experience built with React and Tailwind CSS.",
     image: beHome,
@@ -19,6 +20,7 @@ const projects = [
     num: "02",
     title: "Nazarene District",
     tags: ["UI/UX Design", "Front-End Development", "Backend Development"],
+    status: "in-progress",
     description:
       "A responsive website designed and developed for the Church of the Nazarene District, showcasing churches, ministries, events and contact information.",
     image: nazareneDistrict,
@@ -89,6 +91,18 @@ function ProjectRow({ project, index }) {
               {tag}
             </span>
           ))}
+          {project.status === "live" && (
+            <span className="inline-flex items-center gap-1.5 text-[10px] tracking-widest uppercase font-semibold border border-green-600/40 bg-green-50 px-2.5 py-1 text-green-700">
+              <span className="h-1.5 w-1.5 rounded-full bg-green-500 animate-pulse" />
+              Live
+            </span>
+          )}
+          {project.status === "in-progress" && (
+            <span className="inline-flex items-center gap-1.5 text-[10px] tracking-widest uppercase font-semibold border border-[#66001f]/30 px-2.5 py-1 text-[#66001f]">
+              <span className="h-1.5 w-1.5 rounded-full bg-[#66001f] animate-pulse" />
+              In Progress
+            </span>
+          )}
         </div>
 
         <p className="text-sm text-[#1d2d44]/55 leading-relaxed mb-8 max-w-sm">

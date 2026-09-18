@@ -253,6 +253,11 @@ export default function Branding() {
                 <span className="border border-[#1D2D44]/20 px-4 py-2 text-xs font-semibold tracking-widest text-[#1D2D44]">
                   RESPONSIVE
                 </span>
+
+                <span className="inline-flex items-center gap-2 border border-green-600/40 bg-green-50 px-4 py-2 text-xs font-semibold tracking-widest text-green-700">
+                  <span className="h-1.5 w-1.5 rounded-full bg-green-500 animate-pulse" />
+                  LIVE
+                </span>
               </div>
 
               <div className="mt-10 flex flex-wrap gap-4">

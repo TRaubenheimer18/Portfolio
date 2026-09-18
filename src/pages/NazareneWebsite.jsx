@@ -5,6 +5,10 @@ import nazareneHomepage from "../assets/images/nazarene-homepage.png";
 import nazareneAbout from "../assets/images/nazarene-about.png";
 import nazareneChurches from "../assets/images/nazarene-churches.png";
 import nazareneContact from "../assets/images/nazarene-contact.png";
+import nazareneHomeMobile from "../assets/images/nazarene-home-mobile.PNG";
+import nazareneAboutMobile from "../assets/images/nazarene-about-mobile.PNG";
+import nazareneChurchesMobile from "../assets/images/nazarene-churches-mobile.PNG";
+import nazareneContactMobile from "../assets/images/nazarene-contact-mobile.PNG";
 import {
   ArrowLeft,
   ArrowRight,
@@ -163,10 +167,10 @@ const technologies = [
 ];
 
 const finalDesignItems = [
-  { title: "Homepage", image: nazareneHomepage },
-  { title: "About / District", image: nazareneAbout, reverse: true },
-  { title: "Church Section", image: nazareneChurches },
-  { title: "Contact", image: nazareneContact, reverse: true },
+  { title: "Homepage", image: nazareneHomepage, mobileImage: nazareneHomeMobile },
+  { title: "About / District", image: nazareneAbout, mobileImage: nazareneAboutMobile, reverse: true },
+  { title: "Church Section", image: nazareneChurches, mobileImage: nazareneChurchesMobile },
+  { title: "Contact", image: nazareneContact, mobileImage: nazareneContactMobile, reverse: true },
 ];
 
 const challenges = [
@@ -390,7 +394,7 @@ export default function NazareneWebsite() {
             </p>
 
             <div className="flex flex-wrap gap-2 mt-8">
-              {["UI/UX Design", "Front-End Development", "React", "Responsive Web"].map((tag) => (
+              {["Full Stack Development", "React", "Responsive Web"].map((tag) => (
                 <span
                   key={tag}
                   className="px-4 py-1.5 rounded-full border border-[#1D2D44]/15 text-xs sm:text-sm font-medium text-[#1D2D44]/75"
@@ -398,6 +402,10 @@ export default function NazareneWebsite() {
                   {tag}
                 </span>
               ))}
+              <span className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full border border-[#66001F]/30 bg-[#66001F]/8 text-xs sm:text-sm font-medium text-[#66001F]">
+                <span className="h-1.5 w-1.5 rounded-full bg-[#66001F] animate-pulse" />
+                In Progress
+              </span>
             </div>
           </motion.div>
 
@@ -605,36 +613,20 @@ export default function NazareneWebsite() {
         </section>
 
         {/* =========================
-            9. VISUAL DIRECTION
-        ========================== */}
-
-        <section className="px-6 md:px-10 py-24 bg-[#FFFCF6] text-[#1D2D44] max-w-7xl mx-auto">
-          <SectionHeading icon={<Palette size={24} />} title="Visual Direction" />
-          <p className="text-lg leading-8 text-[#1D2D44]/75 max-w-3xl mb-4">
-            Modern, welcoming, trustworthy and community-focused.
-          </p>
-          <p className="text-base leading-7 text-[#1D2D44]/65 max-w-3xl mb-10">
-            The visual system was designed to balance a contemporary digital interface with the
-            established identity of the church organisation.
-          </p>
-          <ImagePlaceholder label="Moodboard / Screenshots / Branding References" aspect="aspect-[16/7]" />
-        </section>
-
-        {/* =========================
             10. COLOUR PALETTE
         ========================== */}
 
-        <section className="py-24 bg-[#1D2D44] text-[#FFFCF6]">
+        <section className="py-24 bg-[#FFFCF6] text-[#1D2D44]">
           <div className="max-w-7xl mx-auto px-6 md:px-10">
-          <SectionHeading icon={<Palette size={24} />} title="Colour Palette" light />
+          <SectionHeading icon={<Palette size={24} />} title="Colour Palette" />
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {colours.map(({ name, hex, purpose }) => (
-              <div key={hex} className="border border-[#FFFCF6]/20 rounded-2xl overflow-hidden bg-[#FFFCF6]/5">
+              <div key={hex} className="border border-[#1D2D44]/10 rounded-2xl overflow-hidden bg-white">
                 <div className="h-24" style={{ backgroundColor: hex }} />
                 <div className="p-5">
-                  <h3 className="font-bold text-sm text-[#FFFCF6]">{name}</h3>
-                  <p className="text-xs text-[#A2C0DD] mb-2 font-mono">{hex}</p>
-                  <p className="text-xs text-[#FFFCF6]/60 leading-5">{purpose}</p>
+                  <h3 className="font-bold text-sm text-[#1D2D44]">{name}</h3>
+                  <p className="text-xs text-[#66001F] mb-2 font-mono">{hex}</p>
+                  <p className="text-xs text-[#1D2D44]/60 leading-5">{purpose}</p>
                 </div>
               </div>
             ))}
@@ -776,13 +768,13 @@ export default function NazareneWebsite() {
                 <div className="mb-5 flex items-center gap-3 text-sm font-semibold text-[#66001F]">
                   <Tablet size={19} /> Tablet
                 </div>
-                <PhoneFrame label="Tablet" />
+                <PhoneFrame image={nazareneHomeMobile} alt="Nazarene District tablet view" label="Tablet" />
               </div>
               <div>
                 <div className="mb-5 flex items-center gap-3 text-sm font-semibold text-[#66001F]">
                   <Smartphone size={19} /> Mobile
                 </div>
-                <PhoneFrame label="Mobile" />
+                <PhoneFrame image={nazareneHomeMobile} alt="Nazarene District mobile view" label="Mobile" />
               </div>
             </div>
           </div>
@@ -842,7 +834,7 @@ export default function NazareneWebsite() {
 
         <section className="px-6 md:px-10 py-24 bg-[#FFFCF6] text-[#1D2D44] max-w-7xl mx-auto">
           <SectionHeading icon={<ImageIcon size={24} />} title="The finished interface." />
-          {finalDesignItems.map(({ title, image, reverse }, index) => (
+          {finalDesignItems.map(({ title, image, mobileImage, reverse }, index) => (
             <motion.div
               key={title}
               initial={{ opacity: 0, y: 16 }}
@@ -858,13 +850,13 @@ export default function NazareneWebsite() {
               <div className="grid items-end gap-10 lg:grid-cols-12">
                 {reverse ? (
                   <>
-                    <div className="order-2 lg:order-1 lg:col-span-3"><PhoneFrame label={`${title} mobile`} /></div>
+                    <div className="order-2 lg:order-1 lg:col-span-3"><PhoneFrame image={mobileImage} alt={`Nazarene District ${title} mobile`} label={`${title} mobile`} /></div>
                     <div className="order-1 lg:order-2 lg:col-span-9"><LaptopFrame image={image} alt={`Nazarene District ${title} page`} label={title} /></div>
                   </>
                 ) : (
                   <>
                     <div className="lg:col-span-9"><LaptopFrame image={image} alt={`Nazarene District ${title} page`} label={title} /></div>
-                    <div className="lg:col-span-3"><PhoneFrame label={`${title} mobile`} /></div>
+                    <div className="lg:col-span-3"><PhoneFrame image={mobileImage} alt={`Nazarene District ${title} mobile`} label={`${title} mobile`} /></div>
                   </>
                 )}
               </div>
