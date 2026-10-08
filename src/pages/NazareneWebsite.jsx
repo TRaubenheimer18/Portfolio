@@ -754,7 +754,7 @@ export default function NazareneWebsite() {
             13. RESPONSIVE DESIGN
         ========================== */}
 
-        <section className="px-6 md:px-10 py-24 bg-[#FFFCF6] text-[#1D2D44] max-w-7xl mx-auto">
+        {/* <section className="px-6 md:px-10 py-24 bg-[#FFFCF6] text-[#1D2D44] max-w-7xl mx-auto">
           <SectionHeading icon={<Smartphone size={24} />} title="Designed Across Devices" />
           <div className="grid items-end gap-10 lg:grid-cols-12 mb-12">
             <div className="lg:col-span-7">
@@ -786,7 +786,7 @@ export default function NazareneWebsite() {
               </div>
             ))}
           </div>
-        </section>
+        </section> */}
 
         {/* =========================
             14. KEY FEATURES
@@ -942,11 +942,11 @@ export default function NazareneWebsite() {
         ========================== */}
 
         <section className="py-24 bg-[#66001F] text-[#FFFCF6] text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-[#FFFCF6]">Explore the Project</h2>
-          <p className="text-[#FFFCF6]/60 mt-4">View the live site, the code, or head back to the portfolio.</p>
+          {/* <h2 className="text-3xl md:text-4xl font-bold text-[#FFFCF6]">Explore the Project</h2>
+          <p className="text-[#FFFCF6]/60 mt-4">View the live site, the code, or head back to the portfolio.</p> */}
 
           <div className="flex flex-wrap justify-center gap-4 mt-8">
-            <a
+            {/* <a
               href={LIVE_SITE_URL}
               target="_blank"
               rel="noreferrer"
@@ -954,7 +954,7 @@ export default function NazareneWebsite() {
             >
               <ExternalLink size={17} />
               View Live Website
-            </a>
+            </a> */}
 
             <Link
               to="/"
